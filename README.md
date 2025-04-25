@@ -52,11 +52,7 @@ Nele, você pode buscar, filtrar e visualizar informações detalhadas sobre tod
 
 ---
 
-## 📸 Preview
 
-> *Adicione aqui uma imagem ou GIF do projeto rodando (ex: home, card de país, dark mode)*
-
----
 
 ## 👩‍💻 Desenvolvido por
 
