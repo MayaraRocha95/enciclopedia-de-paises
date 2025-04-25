@@ -1,0 +1,160 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 210 100% 50%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 10 100% 60%;
+    --secondary-foreground: 210 40% 98%;
+
+    --accent: 142 72% 29%;
+    --accent-foreground: 210 40% 98%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 210 100% 50%;
+
+    --radius: 0.75rem;
+
+    --chart-1: 210 100% 50%;
+    --chart-2: 142 72% 29%;
+    --chart-3: 10 100% 60%;
+    --chart-4: 47 100% 50%;
+    --chart-5: 262 83% 58%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    background-image: linear-gradient(to right, rgba(234, 238, 243, 0.5) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(234, 238, 243, 0.5) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+}
+
+.perspective {
+  perspective: 1000px;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+/* Adicionar classes para glassmorphism */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Animações suaves para transições */
+.smooth-transition {
+  transition: all 0.3s ease;
+}
+
+/* Melhorar a aparência de scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground));
+}
+
+/* Elementos decorativos inspirados em bandeiras */
+.flag-stripes-header {
+  background: linear-gradient(
+    to right,
+    rgba(0, 57, 166, 0.1) 0%,
+    rgba(0, 57, 166, 0.1) 33.33%,
+    rgba(255, 255, 255, 0.1) 33.33%,
+    rgba(255, 255, 255, 0.1) 66.66%,
+    rgba(237, 41, 57, 0.1) 66.66%,
+    rgba(237, 41, 57, 0.1) 100%
+  );
+}
+
+.flag-corner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, rgba(0, 57, 166, 0.2) 0%, rgba(0, 57, 166, 0) 70%);
+  z-index: 0;
+  border-top-left-radius: var(--radius);
+}
+
+.flag-dots {
+  background-image: radial-gradient(rgba(0, 57, 166, 0.1) 1px, transparent 1px),
+    radial-gradient(rgba(237, 41, 57, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
+}
+
+.flag-accent-border {
+  border-top: 3px solid hsl(var(--accent));
+}
+
+.flag-primary-border {
+  border-top: 3px solid hsl(var(--primary));
+}
+
+.flag-secondary-border {
+  border-top: 3px solid hsl(var(--secondary));
+}
+
+.flag-diagonal-stripe {
+  position: relative;
+  overflow: hidden;
+}
+
+.flag-diagonal-stripe::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  left: -100px;
+  width: 200px;
+  height: 200px;
+  background-color: rgba(237, 41, 57, 0.1);
+  transform: rotate(45deg);
+  z-index: 0;
+}
